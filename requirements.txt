@@ -1,0 +1,7 @@
+transformers
+jupyter
+jupyterlab
+tensorflow
+pyfunctional
+torch
+fitbert
