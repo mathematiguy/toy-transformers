@@ -15,9 +15,16 @@ RUN dpkg-reconfigure -f noninteractive tzdata
 ENV LANG en_NZ.UTF-8
 ENV LANGUAGE en_NZ:en
 
+# Install packages
+RUN apt update && apt install -y silversearcher-ag entr tree
+
 # Install python + other things
 RUN apt install -y python3-dev python3-pip
 RUN python3 -m pip install --upgrade pip
 
 COPY requirements.txt /root/requirements.txt
 RUN pip3 install -r /root/requirements.txt
+
+# Download transformer models
+RUN python3 -c "import transformers;transformers.BertForMaskedLM.from_pretrained('bert-base-uncased')"
+RUN python3 -c "import transformers;transformers.BertForMaskedLM.from_pretrained('bert-base-cased')"
