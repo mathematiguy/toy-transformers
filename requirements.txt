@@ -1,7 +1,6 @@
-transformers
-jupyter
-jupyterlab
-tensorflow
-pyfunctional
-torch
-fitbert
+transformers==4.1.1
+jupyter==1.0.0
+jupyterlab==3.0.1
+tensorflow==2.4.0
+torch==1.7.1
+fitbert==0.9.0
