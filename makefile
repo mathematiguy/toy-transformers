@@ -1,4 +1,4 @@
-DOCKER_REGISTRY := docker.dragonfly.co.nz
+DOCKER_REGISTRY := mathematiguy
 IMAGE_NAME := $(shell basename `git rev-parse --show-toplevel` | tr '[:upper:]' '[:lower:]')
 IMAGE := $(DOCKER_REGISTRY)/$(IMAGE_NAME)
 RUN ?= docker run $(DOCKER_ARGS) --gpus all --rm -v $$(pwd):/work -w /work -u $(UID):$(GID) $(IMAGE)
